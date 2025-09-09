@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet"> 
+<style> 
+.heading { font-family: 'Poppins'; font-weight: 600; } 
+.body { font-family: 'Roboto'; font-weight: 300; } 
+</style> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
+<link rel="stylesheet" href="style.css"> 
+<title>Portfolio Website</title> 
+</head> 
+<body> 
+<nav>
+  <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+    BHAVANA <span>H.P</span>
+  </div>
+
+  <div class="nav-container">
+    <div class="links">
+        
+      <a href="#home" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Home</a>
+      
+      
+      <a href="#about" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">About</a>
+      
+      <a href="#contact" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact Me</a>
+    </div>
+  </div>
+
+  <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+
+  <div class="dropdown">
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      
+      <a href="#contact">Contact Me</a>
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    </div>
+  </div>
+</nav>
+
+<div id="home-page">
+  <section id="home"> 
+    <div class="main-container"> 
+      <div class="content"> 
+        <h1 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="600">Hey I'm <span>BHAVANA H.P</span></h1> 
+        <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="800" class="typewriter">
+          I'm a <span class="typewriter-text"></span><label for="">|</label>
+        </div> 
+        <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1000" style="font-family: 'Montserrat' ; font-size: 18px; font-weight: 500;"> 
+          Learning front-end development and exploring databases with SQL to build practical and efficient solutions
+        </p> 
+        <div class="social-links"> 
+          <a href="https://www.linkedin.com/in/bhavana-h-p-220863319" target="_blank"> 
+            <i class="fa-brands fa-linkedin" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1200"></i> 
+          </a> 
+          <a href="https://github.com/BhavanaHp523" target="_blank"> 
+            <i class="fa-brands fa-github" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"></i> 
+          </a> 
+          <a href="https://www.instagram.com/bhavana.023/" target="_blank"> 
+            <i class="fa-brands fa-instagram" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"></i> 
+          </a> 
+        </div> 
+        <a href="Bhavana Resume.pdf" download> 
+          <button data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1700"> Download CV </button> 
+        </a> 
+        
+        
+      </div> 
+      <div class="image" data-aos="zoom-in" data-aos-duration="2000"> 
+        <img src="profile-removebg-preview.png" alt=""> 
+      </div> 
+    </div> 
+  </section>
+  
+</div>
+<div id="about-page" style="display:none;">
+    
+  <section id="about me">
+    <div class="main-container">
+      <div class="content" data-aos="fade-right" data-aos-duration="1500">
+        <h1>About Me</h1>
+        <p class="about-typewriter">
+          Hi, I’m <strong>Bhavana H.P</strong>, an Engineering student passionate about front-end development and building practical solutions with SQL and databases.
+          PROJECTS:
+           • IoT-Based Sixth Sense Robot (Ongoing)
+              In progress: Building an IoT-based Sixth Sense Robot using Arduino, ultrasonic sensors, and gesture control modules; focused on real-time environmental interaction and hands-free user interface innovations.
+           • Potato Leaf Disease Detection Using Image Dataset
+              Developed a deep learning-based system using Python, TensorFlow/Keras, and OpenCV to identify potato leaf diseases from image datasets, achieving accurate classification through convolutional neural networks (CNNs).
+           • URL to QR Code Converter
+              Designed and implemented a responsive web application that converts URLs into QR codes using HTML,JavaScript, and Python (Flask), demonstrating skills in full-stack development and user-friendly interface design.
+          INTERNSHIP: I have completed an internship at <strong>Online Internship Studio</strong> as a <strong>Data Analyst</strong>, where I gained hands-on experience in analyzing data and completing real projects using Python, SQL, and Excel.
+        </p>
+        <a href="Bhavana Hp - Data Analytics Internship - Offer Letter.pdf" target="_blank">
+  <button>View Internship Offer Letter</button>
+</a>
+
+        <a href="Bhavana Resume.pdf" download>
+          <button>Download CV</button>
+        </a>
+      </div>
+      
+    </div>
+  </section>
+</div>
+<div id="contact-page" style="display:none;">
+  <section id="contact" class="fullpage-contact">
+    <div class="contact-container">
+      <h1>CONTACT ME</h1>
+      <p>Email: <a href="mailto:bhavanahp572@gmail.com">bhavanahp572@gmail.com</a></p>
+      <p>Phone: +91-9019158797</p>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/bhavana-h-p-220863319" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/BhavanaHp523" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/bhavana.023/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+
+      <a href="Bhavana Resume.pdf" download>
+        <button>Download CV</button>
+      </a>
+    </div>
+  </section>
+</div>
+
+
+<script src="script.js"></script> 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script> 
+<script> AOS.init({offset:0}); </script> 
+</body> 
+</html>
