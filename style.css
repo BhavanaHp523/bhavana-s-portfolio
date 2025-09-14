@@ -5,12 +5,14 @@
   box-sizing: border-box; 
 } 
 
-body{ 
-  width: 100%; 
-  height: 100vh; 
-  background-color: black; 
-  overflow: hidden; 
-} 
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  overflow-x: hidden; /* block horizontal scroll */
+  overflow-y: auto;   /* allow vertical scroll */
+}
+
 
 nav{ 
   width: 100%; 
@@ -89,10 +91,11 @@ nav{
   background-color: #b711e0; 
 } 
 
-section{ 
-  width: 100%; 
-  height: 90vh; 
-} 
+section {
+  width: 100%;
+  min-height: 100vh;  /* grows as needed */
+}
+
 
 .main-container{ 
   width: 100%; 
@@ -178,13 +181,22 @@ section{
   left: 40px;       /* moves only the photo box to the right */
 }
 
-
-.main-container .image img{ 
-  width: 110%; 
-} 
-.main-container .image {
-  transform: translateX(20px); /* moves it 20px to the right */
+@media (max-width: 884px) {
+  .main-container .image {
+    width: 90%;
+    height: auto;
+    left: 0;
+    
+    transform: translateX(20px);
+  }
+  .main-container .image img {
+    width: 100%;
+  }
 }
+
+
+
+
 
 @media (max-width:884px) { 
   .main-container { 
@@ -386,4 +398,3 @@ section{
     background-color: transparent;
     border: 2px solid #b711e0;
 }
-
