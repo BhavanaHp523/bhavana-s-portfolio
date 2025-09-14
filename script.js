@@ -108,4 +108,3 @@ contactLink.addEventListener('click', (e) => {
     aboutPage.style.display = 'none';
     contactPage.style.display = 'block';
 });
-
