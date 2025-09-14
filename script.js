@@ -48,49 +48,43 @@ const pages = {
 };
 
 function showPage(pageName) {
-    // Hide all pages
-    for (let key in pages) {
+    for(let key in pages){
         pages[key].classList.remove('active');
     }
-    // Show selected page
     pages[pageName].classList.add('active');
-    // Close mobile menu if open
     closeDropdown();
 }
 
-// ------------------------
-// Nav Links (Desktop & Mobile)
-// ------------------------
-document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
-    link.addEventListener('click', function(e){
+// Nav Links
+document.querySelectorAll('.nav-link, .dropdown-link').forEach(link=>{
+    link.addEventListener('click',function(e){
         e.preventDefault();
-        const page = this.getAttribute('data-page');
+        const page=this.getAttribute('data-page');
         showPage(page);
 
-        // About typewriter effect
-        if(page === 'about') startAboutTypewriter();
+        if(page==='about') startAboutTypewriter();
     });
 });
 
 // ------------------------
-// About Typewriter (optional, if you want effect)
+// About Typewriter
 // ------------------------
 const aboutTextEl = document.querySelector('.about-typewriter');
 let aboutTextContent = aboutTextEl ? aboutTextEl.innerText : '';
-if(aboutTextEl) aboutTextEl.innerText = '';
+if(aboutTextEl) aboutTextEl.innerText='';
 let aboutIndex = 0;
 
-function startAboutTypewriter() {
+function startAboutTypewriter(){
     if(!aboutTextEl) return;
-    aboutTextEl.innerText = '';
-    aboutIndex = 0;
+    aboutTextEl.innerText='';
+    aboutIndex=0;
     typeAbout();
 }
 
-function typeAbout() {
-    if(aboutIndex < aboutTextContent.length) {
+function typeAbout(){
+    if(aboutIndex < aboutTextContent.length){
         aboutTextEl.innerText += aboutTextContent.charAt(aboutIndex);
         aboutIndex++;
-        setTimeout(typeAbout, 30);
+        setTimeout(typeAbout,30);
     }
 }
