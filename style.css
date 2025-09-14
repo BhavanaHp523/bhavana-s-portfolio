@@ -398,3 +398,86 @@ section {
     background-color: transparent;
     border: 2px solid #b711e0;
 }
+/* ✅ Global Fixes */
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  overflow-x: hidden;   /* block horizontal scroll */
+  overflow-y: auto;     /* allow vertical scroll */
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;    /* grows if content is taller */
+}
+
+/* ✅ Mobile Responsiveness */
+@media (max-width: 884px) {
+  /* Stack content vertically */
+  .main-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Responsive Image */
+  .main-container .image {
+    width: 90%;
+    height: auto;
+    left: 0;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .main-container .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Content full width on mobile */
+  .main-container .content {
+    width: 100%;
+    text-align: center;
+    box-shadow: none; /* remove heavy shadow on small screen */
+  }
+
+  /* Navbar adjustments */
+  .nav-container .links {
+    display: none; /* hide desktop links */
+  }
+
+  .hamburg,
+  .cancel {
+    display: block; /* show menu button */
+  }
+
+  /* Dropdown covers full screen */
+  .dropdown {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.95);
+    overflow-y: auto;
+  }
+
+  .dropdown .links a {
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+
+  /* Buttons look centered */
+  .content button {
+    width: 80%;
+    margin: 15px auto;
+  }
+
+  /* About and Contact sections spacing */
+  #about-page .content,
+  #contact-page .contact-container {
+    padding: 20px;
+    text-align: left;
+  }
+}
+
