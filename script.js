@@ -1,8 +1,8 @@
-// Hamburger menu
+// Hamburger
 function openDropdown(){document.querySelector('.dropdown').style.transform='translateY(0)';}
 function closeDropdown(){document.querySelector('.dropdown').style.transform='translateY(-100%)';}
 
-// Home Typewriter
+// Home typewriter
 const homeTextEl=document.querySelector('.typewriter-text');
 const homeTexts=["Engineering Student"];
 let hIndex=0,hChar=0;
@@ -21,7 +21,7 @@ function eraseHome(){
 }
 window.onload=typeHome;
 
-// Page navigation
+// Navigation
 const pages={
     home:document.getElementById('home'),
     about:document.getElementById('about'),
@@ -32,34 +32,25 @@ function showPage(name){
     Object.values(pages).forEach(p=>p.classList.remove('active'));
     pages[name].classList.add('active');
     closeDropdown();
-    if(name==='about') startAboutTypewriter();
 }
 
-// Nav links
-document.querySelectorAll('.nav-link, .dropdown-link').forEach(link=>{
-    link.addEventListener('click', e=>{
-        e.preventDefault();
-        showPage(link.getAttribute('data-page'));
-    });
-});
+// Navbar links
+document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>showPage(l.dataset.page)));
+document.querySelectorAll('.dropdown-link').forEach(l=>l.addEventListener('click',()=>showPage(l.dataset.page)));
 
-// About Typewriter
-const aboutTextEl=document.querySelector('.about-typewriter');
-let aboutTextContent=aboutTextEl?aboutTextEl.innerText:'';
-if(aboutTextEl) aboutTextEl.innerText='';
-let aboutIndex=0;
-
-function startAboutTypewriter(){
-    if(!aboutTextEl) return;
-    aboutTextEl.innerText='';
-    aboutIndex=0;
-    typeAbout();
-}
-
+// About typewriter
+const aboutEl=document.querySelector('.about-typewriter');
+let aIndex=0;
 function typeAbout(){
-    if(aboutIndex<aboutTextContent.length){
-        aboutTextEl.innerText+=aboutTextContent.charAt(aboutIndex);
-        aboutIndex++;
-        setTimeout(typeAbout,30);
+    aboutEl.innerText='';
+    aIndex=0;
+    const txt=aboutEl.dataset.text||aboutEl.innerText;
+    function t(){
+        if(aIndex<txt.length){
+            aboutEl.innerText+=txt.charAt(aIndex);
+            aIndex++;
+            setTimeout(t,30);
+        }
     }
+    t();
 }
