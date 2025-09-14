@@ -1,6 +1,6 @@
 // Hamburger menu
 function hamburg(){document.querySelector('.dropdown').style.transform='translateY(0)';}
-function cancel(){document.querySelector('.dropdown').style.transform='translateY(-500px)';}
+function cancel(){document.querySelector('.dropdown').style.transform='translateY(-100%)';}
 
 // Home Typewriter
 const texts=["Engineering Student"];
@@ -28,27 +28,4 @@ const contactPage=document.getElementById('contact-page');
 const aboutTextElement=document.querySelector('.about-typewriter');
 const aboutText=aboutTextElement.innerText;
 aboutTextElement.innerText='';
-let i=0;
-function typeAbout(){
-    if(i<aboutText.length){aboutTextElement.innerText+=aboutText.charAt(i);i++;setTimeout(typeAbout,50);}
-}
-
-// Show section
-function showSection(section){
-    homePage.style.display='none';aboutPage.style.display='none';contactPage.style.display='none';
-    if(section==='home')homePage.style.display='block';
-    else if(section==='about'){aboutPage.style.display='block';i=0;aboutTextElement.innerText='';typeAbout();}
-    else if(section==='contact')contactPage.style.display='block';
-    cancel();
-}
-
-// Navigation links
-document.querySelectorAll('nav a, .dropdown a').forEach(link=>{
-    link.addEventListener('click',function(e){
-        e.preventDefault();
-        const href=this.getAttribute('href');
-        if(href==='#home')showSection('home');
-        else if(href==='#about')showSection('about');
-        else if(href==='#contact')showSection('contact');
-    });
-});
+let i=
