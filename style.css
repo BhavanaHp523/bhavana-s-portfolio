@@ -193,6 +193,37 @@ section {
     width: 100%;
   }
 }
+@media (max-width: 884px) {
+  .dropdown {
+    width: 100%;
+    height: 100vh;                   /* full screen */
+    background: rgba(0,0,0,0.95);
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);    /* hidden by default */
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .dropdown .links a {
+    font-size: 1.5rem;
+    color: white;
+    margin: 20px 0;
+    text-decoration: none;
+  }
+
+  .cancel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+  }
+}
 
 
 
@@ -480,4 +511,5 @@ section {
     text-align: left;
   }
 }
+
 
