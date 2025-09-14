@@ -108,3 +108,14 @@ contactLink.addEventListener('click', (e) => {
     aboutPage.style.display = 'none';
     contactPage.style.display = 'block';
 });
+// Open mobile dropdown
+function hamburg() {
+  const navbar = document.querySelector('.dropdown');
+  navbar.style.transform = 'translateY(0)'; // slide down to show links
+}
+// Close mobile dropdown
+function cancel(){
+  const navbar = document.querySelector('.dropdown');
+  navbar.style.transform = 'translateY(-500px)'; // hide links again
+}
+
