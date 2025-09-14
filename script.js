@@ -1,8 +1,8 @@
-// Hamburger
+// Hamburger menu
 function openDropdown(){document.querySelector('.dropdown').style.transform='translateY(0)';}
 function closeDropdown(){document.querySelector('.dropdown').style.transform='translateY(-100%)';}
 
-// Home typewriter
+// Home Typewriter
 const homeTextEl=document.querySelector('.typewriter-text');
 const homeTexts=["Engineering Student"];
 let hIndex=0,hChar=0;
@@ -27,24 +27,22 @@ const pages={
     about:document.getElementById('about'),
     contact:document.getElementById('contact')
 };
-
 function showPage(name){
     Object.values(pages).forEach(p=>p.classList.remove('active'));
     pages[name].classList.add('active');
     closeDropdown();
 }
 
-// Navbar links
+// Navbar and dropdown links
 document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>showPage(l.dataset.page)));
 document.querySelectorAll('.dropdown-link').forEach(l=>l.addEventListener('click',()=>showPage(l.dataset.page)));
 
 // About typewriter
 const aboutEl=document.querySelector('.about-typewriter');
-let aIndex=0;
 function typeAbout(){
+    const txt=aboutEl.dataset.text;
     aboutEl.innerText='';
-    aIndex=0;
-    const txt=aboutEl.dataset.text||aboutEl.innerText;
+    let aIndex=0;
     function t(){
         if(aIndex<txt.length){
             aboutEl.innerText+=txt.charAt(aIndex);
@@ -54,3 +52,9 @@ function typeAbout(){
     }
     t();
 }
+// Run about typewriter when About page opens
+document.querySelectorAll('.nav-link, .dropdown-link').forEach(l=>{
+    l.addEventListener('click', ()=>{
+        if(l.dataset.page==='about') typeAbout();
+    });
+});
